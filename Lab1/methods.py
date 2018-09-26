@@ -56,3 +56,21 @@ def clear_container(input_file):
                 data.append(line)
     file.close()
     return data
+
+
+def clear_file(input_file):
+    data = []
+    with open(input_file, 'r') as file:
+        line = file.readline()
+        while line:
+            result = clear_str(line)
+            data.append(result)
+            line = file.readline()
+    return data
+
+
+def clear_str(line):
+    i = len(line) - 2
+    while line[i] == ' ':
+        i -= 1
+    return line[:i + 1:] + '\n'

@@ -11,7 +11,8 @@ class Container:
         if methods.is_encrypt(input_file):
             text = methods.clear_container(input_file)
         else:
-            text = methods.read_file(input_file)
+            text = methods.clear_file(input_file)
+            # text = methods.read_file(input_file)
         bit_array = methods.string_to_bitstr(self.key)
         count = 0
         if len(bit_array) * 7 > len(text):
